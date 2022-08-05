@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "khC7q4TIO3R9OAoDpadL13pHuYJe9IWZULtnsL0PQ0CEU6MjMRS9GRTe2ytZNR7xcj8WRO2EDmT4ZyIdJl37MA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\andre.arruda\\Source\\Repos\\service_manager\\serviceMManager\\serviceMManager.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\andre.arruda\\.nuget\\packages\\system.diagnostics.eventlog\\6.0.0\\system.diagnostics.eventlog.6.0.0.nupkg.sha512",
+    "C:\\Users\\andre.arruda\\.nuget\\packages\\system.serviceprocess.servicecontroller\\6.0.0\\system.serviceprocess.servicecontroller.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
