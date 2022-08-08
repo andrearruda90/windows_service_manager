@@ -6,6 +6,8 @@ using System.ServiceProcess;
 using System.IO;
 using System.Configuration;
 using System.Threading;
+using System.Net.Sockets;
+using System.Net;
 
 namespace service_manager
 {
@@ -272,7 +274,7 @@ namespace service_manager
             catch (Exception)
             {
                 MessageBox.Show("Verifique o endereço IP");
-                configuration.AppSettings.Settings["ip"].Value = "";
+                configuration.AppSettings.Settings["ip"].Value = localip();
                 configuration.Save(ConfigurationSaveMode.Full, true);
                 //throw;
             }
@@ -727,6 +729,17 @@ namespace service_manager
         private void button9_Click(object sender, EventArgs e)
         {
             searchingListivew1();
+        }
+        public string localip()
+        {
+            string localIP;
+            using (Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, 0))
+            {
+                socket.Connect("8.8.8.8", 65530);
+                IPEndPoint endPoint = socket.LocalEndPoint as IPEndPoint;
+                localIP = endPoint.Address.ToString();
+                return localIP;
+            }
         }
     }
 }

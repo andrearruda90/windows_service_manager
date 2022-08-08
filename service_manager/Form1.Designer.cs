@@ -43,8 +43,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button9 = new System.Windows.Forms.Button();
             this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.button4 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button5 = new System.Windows.Forms.Button();
@@ -54,12 +60,6 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.button8 = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -196,6 +196,18 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Pesquisa";
             // 
+            // button9
+            // 
+            this.button9.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.button9.Image = global::service_manager.Properties.Resources.refresh002;
+            this.button9.Location = new System.Drawing.Point(384, 30);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(43, 65);
+            this.button9.TabIndex = 18;
+            this.toolTip1.SetToolTip(this.button9, "Atualizasr tabela");
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
             // checkBox4
             // 
             this.checkBox4.AutoSize = true;
@@ -208,6 +220,19 @@
             this.toolTip1.SetToolTip(this.checkBox4, "Facilita a visibilidade do status dos serviços");
             this.checkBox4.UseVisualStyleBackColor = true;
             this.checkBox4.CheckedChanged += new System.EventHandler(this.checkBox4_CheckedChanged);
+            // 
+            // button4
+            // 
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button4.Image = global::service_manager.Properties.Resources.lupa;
+            this.button4.Location = new System.Drawing.Point(334, 30);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(44, 65);
+            this.button4.TabIndex = 8;
+            this.toolTip1.SetToolTip(this.button4, "Buscar");
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // groupBox2
             // 
@@ -224,6 +249,70 @@
             this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Executar";
+            // 
+            // button7
+            // 
+            this.button7.AccessibleDescription = "Reiniciar";
+            this.button7.BackColor = System.Drawing.Color.Transparent;
+            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button7.Image = global::service_manager.Properties.Resources.refresh;
+            this.button7.Location = new System.Drawing.Point(161, 19);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(45, 92);
+            this.button7.TabIndex = 4;
+            this.toolTip1.SetToolTip(this.button7, "Reiniciar");
+            this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // button6
+            // 
+            this.button6.AccessibleDescription = "Pausar";
+            this.button6.BackColor = System.Drawing.Color.Transparent;
+            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button6.Image = global::service_manager.Properties.Resources.pause_button;
+            this.button6.Location = new System.Drawing.Point(110, 19);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(45, 92);
+            this.button6.TabIndex = 3;
+            this.toolTip1.SetToolTip(this.button6, "Pausar");
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button1
+            // 
+            this.button1.AccessibleDescription = "Iniciar";
+            this.button1.AccessibleName = "Iniciar";
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Image = global::service_manager.Properties.Resources.power;
+            this.button1.Location = new System.Drawing.Point(7, 19);
+            this.button1.Name = "button1";
+            this.button1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.button1.Size = new System.Drawing.Size(46, 92);
+            this.button1.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.button1, "Iniciar");
+            this.button1.UseMnemonic = false;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.AccessibleDescription = "Parar";
+            this.button2.AutoEllipsis = true;
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.Image = global::service_manager.Properties.Resources.stop_button;
+            this.button2.Location = new System.Drawing.Point(59, 19);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(45, 92);
+            this.button2.TabIndex = 2;
+            this.toolTip1.SetToolTip(this.button2, "Parar");
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // groupBox3
             // 
@@ -297,9 +386,9 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(58, 45);
+            this.button8.Location = new System.Drawing.Point(82, 45);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(88, 21);
+            this.button8.Size = new System.Drawing.Size(64, 21);
             this.button8.TabIndex = 1;
             this.button8.Text = "Conectar";
             this.button8.UseVisualStyleBackColor = true;
@@ -311,95 +400,6 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(141, 20);
             this.textBox3.TabIndex = 0;
-            // 
-            // button9
-            // 
-            this.button9.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button9.Image = global::service_manager.Properties.Resources.refresh002;
-            this.button9.Location = new System.Drawing.Point(384, 30);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(43, 65);
-            this.button9.TabIndex = 18;
-            this.toolTip1.SetToolTip(this.button9, "Atualizasr tabela");
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
-            // 
-            // button7
-            // 
-            this.button7.AccessibleDescription = "Reiniciar";
-            this.button7.BackColor = System.Drawing.Color.Transparent;
-            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button7.Image = global::service_manager.Properties.Resources.refresh;
-            this.button7.Location = new System.Drawing.Point(161, 19);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(45, 92);
-            this.button7.TabIndex = 4;
-            this.toolTip1.SetToolTip(this.button7, "Reiniciar");
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // button6
-            // 
-            this.button6.AccessibleDescription = "Pausar";
-            this.button6.BackColor = System.Drawing.Color.Transparent;
-            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button6.Image = global::service_manager.Properties.Resources.pause_button;
-            this.button6.Location = new System.Drawing.Point(110, 19);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(45, 92);
-            this.button6.TabIndex = 3;
-            this.toolTip1.SetToolTip(this.button6, "Pausar");
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // button1
-            // 
-            this.button1.AccessibleDescription = "Iniciar";
-            this.button1.AccessibleName = "Iniciar";
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Image = global::service_manager.Properties.Resources.power;
-            this.button1.Location = new System.Drawing.Point(7, 19);
-            this.button1.Name = "button1";
-            this.button1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button1.Size = new System.Drawing.Size(46, 92);
-            this.button1.TabIndex = 1;
-            this.toolTip1.SetToolTip(this.button1, "Iniciar");
-            this.button1.UseMnemonic = false;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.AccessibleDescription = "Parar";
-            this.button2.AutoEllipsis = true;
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.Image = global::service_manager.Properties.Resources.stop_button;
-            this.button2.Location = new System.Drawing.Point(59, 19);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(45, 92);
-            this.button2.TabIndex = 2;
-            this.toolTip1.SetToolTip(this.button2, "Parar");
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button4
-            // 
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button4.Image = global::service_manager.Properties.Resources.lupa;
-            this.button4.Location = new System.Drawing.Point(334, 30);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(44, 65);
-            this.button4.TabIndex = 8;
-            this.toolTip1.SetToolTip(this.button4, "Buscar");
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // Form1
             // 
