@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using System.ServiceProcess;
 using System.IO;
 using System.Configuration;
+using System.Threading;
 
 namespace service_manager
 {
@@ -194,7 +195,7 @@ namespace service_manager
                                 try
                                 {
                                     services++;
-                                    TimeSpan timeout = TimeSpan.FromMilliseconds(3000);
+                                    TimeSpan timeout = TimeSpan.FromMilliseconds(1000);
                                     scTemp.Start();
                                     scTemp.WaitForStatus(ServiceControllerStatus.Running, timeout);
                                     //listView1.Items.Clear();
@@ -235,7 +236,7 @@ namespace service_manager
                                 try
                                 {
                                     services++;
-                                    TimeSpan timeout = TimeSpan.FromMilliseconds(3000);
+                                    TimeSpan timeout = TimeSpan.FromMilliseconds(1000);
                                     scTemp.Stop();
                                     scTemp.WaitForStatus(ServiceControllerStatus.Stopped, timeout);
                                 }

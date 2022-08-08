@@ -44,18 +44,18 @@
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.button4 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.button5 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.checkBox5 = new System.Windows.Forms.CheckBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -203,6 +203,19 @@
             this.checkBox4.UseVisualStyleBackColor = true;
             this.checkBox4.CheckedChanged += new System.EventHandler(this.checkBox4_CheckedChanged);
             // 
+            // button4
+            // 
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button4.Image = global::service_manager.Properties.Resources.lupa;
+            this.button4.Location = new System.Drawing.Point(358, 32);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(44, 65);
+            this.button4.TabIndex = 8;
+            this.toolTip1.SetToolTip(this.button4, "Buscar");
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.White;
@@ -218,65 +231,6 @@
             this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Executar";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.BackColor = System.Drawing.Color.White;
-            this.groupBox3.Controls.Add(this.textBox2);
-            this.groupBox3.Controls.Add(this.button5);
-            this.groupBox3.Controls.Add(this.button3);
-            this.groupBox3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.groupBox3.Location = new System.Drawing.Point(691, 10);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(153, 118);
-            this.groupBox3.TabIndex = 15;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Busca rápida";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(28, 32);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(103, 20);
-            this.textBox2.TabIndex = 13;
-            // 
-            // checkBox5
-            // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.checkBox5.Location = new System.Drawing.Point(6, 142);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(105, 17);
-            this.checkBox5.TabIndex = 16;
-            this.checkBox5.Text = "Selecionar todos";
-            this.checkBox5.UseVisualStyleBackColor = true;
-            this.checkBox5.CheckedChanged += new System.EventHandler(this.checkBox5_CheckedChanged);
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.Transparent;
-            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.Location = new System.Drawing.Point(82, 63);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(65, 23);
-            this.button5.TabIndex = 11;
-            this.button5.Text = "Remover";
-            this.toolTip1.SetToolTip(this.button5, "Remover");
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.Transparent;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.Location = new System.Drawing.Point(6, 63);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(65, 23);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Adicionar";
-            this.toolTip1.SetToolTip(this.button3, "Adicionar");
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button7
             // 
@@ -342,18 +296,64 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button4
+            // groupBox3
             // 
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button4.Image = global::service_manager.Properties.Resources.lupa;
-            this.button4.Location = new System.Drawing.Point(358, 32);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(44, 65);
-            this.button4.TabIndex = 8;
-            this.toolTip1.SetToolTip(this.button4, "Buscar");
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.groupBox3.BackColor = System.Drawing.Color.White;
+            this.groupBox3.Controls.Add(this.textBox2);
+            this.groupBox3.Controls.Add(this.button5);
+            this.groupBox3.Controls.Add(this.button3);
+            this.groupBox3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.groupBox3.Location = new System.Drawing.Point(691, 10);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(153, 118);
+            this.groupBox3.TabIndex = 15;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Busca rápida";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(28, 32);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(103, 20);
+            this.textBox2.TabIndex = 13;
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.Transparent;
+            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button5.Location = new System.Drawing.Point(82, 63);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(65, 23);
+            this.button5.TabIndex = 11;
+            this.button5.Text = "Remover";
+            this.toolTip1.SetToolTip(this.button5, "Remover");
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Transparent;
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.Location = new System.Drawing.Point(6, 63);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(65, 23);
+            this.button3.TabIndex = 4;
+            this.button3.Text = "Adicionar";
+            this.toolTip1.SetToolTip(this.button3, "Adicionar");
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // checkBox5
+            // 
+            this.checkBox5.AutoSize = true;
+            this.checkBox5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.checkBox5.Location = new System.Drawing.Point(6, 142);
+            this.checkBox5.Name = "checkBox5";
+            this.checkBox5.Size = new System.Drawing.Size(105, 17);
+            this.checkBox5.TabIndex = 16;
+            this.checkBox5.Text = "Selecionar todos";
+            this.checkBox5.UseVisualStyleBackColor = true;
+            this.checkBox5.CheckedChanged += new System.EventHandler(this.checkBox5_CheckedChanged);
             // 
             // Form1
             // 
@@ -370,7 +370,9 @@
             this.Controls.Add(this.listView2);
             this.Controls.Add(this.listView1);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Gerenciador de Serviços do Windows - por André Arruda";
             this.Load += new System.EventHandler(this.Form1_Load);
