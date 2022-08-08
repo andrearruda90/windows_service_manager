@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="service_manager.exe" version="1.0.0.0" publicKeyToken="0d04e818f2895c0a" language="neutral" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="Services-Icon-Big-256.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="service_manager" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="service_manager.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ObjectListView.dll" size="444928">
+      <assemblyIdentity name="ObjectListView" version="2.9.1.1072" publicKeyToken="B1C5BF581481BCD4" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>C5SzgkdhcjQA3ANX59SQCFpczzQV4zIVXFuNbHv7h4g=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="service_manager.exe" size="294840">
+      <assemblyIdentity name="service_manager" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>3HX+WPFI5j7YnaUJzqz79PEBCmvddhZUPLDHGdtF8Vw=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="System.Diagnostics.EventLog.dll" size="31848">
+      <assemblyIdentity name="System.Diagnostics.EventLog" version="6.0.0.0" publicKeyToken="CC7B13FFCD2DDD51" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>1gN4xcdElHvZWqVcNyj3DQkc9lgF3W0K4ZTO85W54eU=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="System.Security.Principal.Windows.dll" size="18312">
+      <assemblyIdentity name="System.Security.Principal.Windows" version="5.0.0.0" publicKeyToken="B03F5F7F11D50A3A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>tNjhWtwjXQ6Fjjm1Ez5dAKS6qMlPTznjteeRsPnAyAY=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="System.ServiceProcess.ServiceController.dll" size="19584">
+      <assemblyIdentity name="System.ServiceProcess.ServiceController" version="6.0.0.0" publicKeyToken="B03F5F7F11D50A3A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>gBnv6cYxcKha2LXN3xsdKeLRKkFIrx6YtGotIB2cr2Q=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Topshelf.dll" size="190464">
+      <assemblyIdentity name="Topshelf" version="4.3.0.0" publicKeyToken="B800C4CFCDEEA87B" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>vXClgyEk42hARS/0bkQu+goJpM66hCrqcsebLTItf+g=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="icons\minus.ico" size="100689">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>QqxHHQj29gGVPU+CEYDh8kEjdMlGf8RHPSBllGfb6o0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="icons\pause-button.ico" size="107087">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>/UPnh6WiifyfLN+nmR0GB/lkuknKbfvRWr7yCTqpVoU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="icons\plus.ico" size="102188">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>ZY/IrErhy5e+6/cQBOZ/3QhDBrZsf6BZP5Zhk4weauA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="icons\power.ico" size="111636">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>EHAzu+xqY+gFPaW0I814Ip4Jx4+efm02k6OVdr7KSyM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="icons\refresh.ico" size="110472">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>lIsbwew1Qt35gbupdIgHQBgZNVpnnzyHGhP2hh3KhOY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="icons\stop-button.ico" size="105867">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>LSthabCCl17/vHIf7tEq4kWTMtugjjMrHMzSMABaA3E=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="service_manager.exe.config" size="331">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>h87IuYpZKP8zYyUcu5NOKhALzeO1WyX22Cl6fhLPvOE=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Services-Icon-Big-256.ico" size="131348">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>6jfBe4hwOpiadJsMt3EdQkv6UDQCuFd7D16TuiKh66g=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=ANDRÉ-PC\Andre" issuerKeyHash="42bdf4a2bc6979240e538f4c9b3ec6a80fa1df5d" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>8jVah+aUk9u/uQ82dx2CBo+AxtU7yzSSlJCoDgy9FAc=</DigestValue></Reference></SignedInfo><SignatureValue>NtDnfUhfbW0Uo0DoaaFKoXUz9FqKi/Givz/kmmWZ44GTLV3J2p3t07XqagvkrabDTdmNw0LiRH1oY/RqRD5NMQ7WIZX4BEkFvHrTlSjp6THrdoXsqZlXlYeagIydyUXB5RtJ0rqPJ9TMLodn6BG3uawJrcUpoHb8IpGYcLtMnsI=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>ujxy8xOLTUod7JJLCiqQRdizn3sHcDMVIDuLq6JqdTxAAreenzPj1nOyoZvYRqrDSVi1aglLS6sBUNZ74zgxYuIYpIACf5n7GKzaLy5Ix9jHNqS1j1gbtyrdC99EeergkXeFylXKLI2h91IxyU/L1y+X+TR3qg1hJoLxZOZ+Q8E=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="0714bd0c0ea890949234cb3bd5c6808f06821d77360fb9bfdb9394e6875a35f2" Description="" Url=""><as:assemblyIdentity name="service_manager.exe" version="1.0.0.0" publicKeyToken="0d04e818f2895c0a" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=ANDRÉ-PC\Andre</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>a3f6NliOIkMgoQLW3499xJZWshF9//JkBj7c8lCIDlE=</DigestValue></Reference></SignedInfo><SignatureValue>jWGU0f7BDq8F8qF+Sw7R4R8WYRVMQYXl48ot5s8iUFrxBV7qkJMP3MjVSR8x27w7FdaqXr95/vVARzMxjqay/nMXuse9sDCcVFGUWiuWekEa2oYMS4/HRAiqroFhEcG8lIqhPRWukGyUSxq2NyE0cCbSWTd5d9LgcED+5d1o5bQ=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>ujxy8xOLTUod7JJLCiqQRdizn3sHcDMVIDuLq6JqdTxAAreenzPj1nOyoZvYRqrDSVi1aglLS6sBUNZ74zgxYuIYpIACf5n7GKzaLy5Ix9jHNqS1j1gbtyrdC99EeergkXeFylXKLI2h91IxyU/L1y+X+TR3qg1hJoLxZOZ+Q8E=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB0TCCATqgAwIBAgIQPTOXkRtJNYpHcvppqNIAqDANBgkqhkiG9w0BAQsFADAnMSUwIwYDVQQDHhwAQQBOAEQAUgDJAC0AUABDAFwAQQBuAGQAcgBlMB4XDTIyMDgwODAwMTcxMVoXDTIzMDgwODA2MTcxMVowJzElMCMGA1UEAx4cAEEATgBEAFIAyQAtAFAAQwBcAEEAbgBkAHIAZTCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAujxy8xOLTUod7JJLCiqQRdizn3sHcDMVIDuLq6JqdTxAAreenzPj1nOyoZvYRqrDSVi1aglLS6sBUNZ74zgxYuIYpIACf5n7GKzaLy5Ix9jHNqS1j1gbtyrdC99EeergkXeFylXKLI2h91IxyU/L1y+X+TR3qg1hJoLxZOZ+Q8ECAwEAATANBgkqhkiG9w0BAQsFAAOBgQCeYWn8J6J285dI5rMTmfYaAVtkLLY9B78LmEGaM+aSmnDTBBkl+MHAm4/pTrVBFUxYN6wVDf2TDqGlrC43/6MpJVe2ShHhspvWivFBBXmOoP5Q5pC2uRtQCVhSDlxqWDsan77dXzjz4rzs183o559uEImTzbvQQyzx2FHE8Qx2Jg==</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
