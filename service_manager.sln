@@ -5,7 +5,7 @@ VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "service_manager", "service_manager\service_manager.csproj", "{DD0CD1C9-F3C0-473A-BA70-D09E4068669E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "serviceMManager", "serviceMManager\serviceMManager.csproj", "{35ED6F09-F935-4D8B-A446-F84CCC8137DB}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "instalador", "Instalador\instalador\instalador.vdproj", "{6226FE3B-84C3-45FE-830B-85458C549DF5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,8 @@ Global
 		{DD0CD1C9-F3C0-473A-BA70-D09E4068669E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD0CD1C9-F3C0-473A-BA70-D09E4068669E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD0CD1C9-F3C0-473A-BA70-D09E4068669E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{35ED6F09-F935-4D8B-A446-F84CCC8137DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{35ED6F09-F935-4D8B-A446-F84CCC8137DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{35ED6F09-F935-4D8B-A446-F84CCC8137DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{35ED6F09-F935-4D8B-A446-F84CCC8137DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6226FE3B-84C3-45FE-830B-85458C549DF5}.Debug|Any CPU.ActiveCfg = Debug
+		{6226FE3B-84C3-45FE-830B-85458C549DF5}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
