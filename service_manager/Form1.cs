@@ -8,6 +8,7 @@ using System.Configuration;
 using System.Threading;
 using System.Net.Sockets;
 using System.Net;
+using System.Net.NetworkInformation;
 
 namespace service_manager
 {
@@ -51,11 +52,24 @@ namespace service_manager
 
         public void Form1_Load(object sender, EventArgs e)
         {
-            textBox3.Text = configuration.AppSettings.Settings["ip"].Value;
-            loadUserPreferences();
-            //checkAutomaticbutton();
-            loadingListview2();
-            loadingListView1();
+            textBox3.Text = localip();
+            if (PingHost(textBox3.Text))
+            {
+                textBox3.Text = configuration.AppSettings.Settings["ip"].Value;
+                loadUserPreferences();
+                //checkAutomaticbutton();
+                loadingListview2();
+                loadingListView1();
+            }
+            else
+            {
+                textBox3.Text = localip();
+                loadUserPreferences();
+                //checkAutomaticbutton();
+                loadingListview2();
+                loadingListView1();
+            }
+
         }
 
          void loadingListView1()
@@ -429,7 +443,7 @@ namespace service_manager
             catch (Exception)
             {
 
-                throw;
+                //throw;
             }
 
         }
@@ -460,7 +474,7 @@ namespace service_manager
             catch (Exception)
             {
 
-                throw;
+                //throw;
             }
   
         }
@@ -548,18 +562,36 @@ namespace service_manager
 
         private void checkBox3_CheckedChanged(object sender, EventArgs e)
         {
-            checkAutomaticbutton();
-            searchingListivew1();
-            if (checkBox3.Checked == true)
+            try
             {
-                configuration.AppSettings.Settings["automatico"].Value = "on";
-                configuration.Save(ConfigurationSaveMode.Full, true);
+                checkAutomaticbutton();
+                searchingListivew1();
+                if (checkBox3.Checked == true)
+                {
+                    configuration.AppSettings.Settings["automatico"].Value = "on";
+                    configuration.Save(ConfigurationSaveMode.Full, true);
+                }
+                else
+                {
+                    configuration.AppSettings.Settings["automatico"].Value = "off";
+                    configuration.Save(ConfigurationSaveMode.Full, true);
+                }
             }
-            else
+            catch (Exception)
             {
-                configuration.AppSettings.Settings["automatico"].Value = "off";
-                configuration.Save(ConfigurationSaveMode.Full, true);
+                checkAutomaticbutton();
+                searchingListivew1();
+                if (checkBox3.Checked == true)
+                {
+                    configuration.AppSettings.Settings["automatico"].Value = "on";
+                }
+                else
+                {
+                    configuration.AppSettings.Settings["automatico"].Value = "off";
+                }
+                //throw;
             }
+           
             
         }
 
@@ -625,17 +657,35 @@ namespace service_manager
 
         private void checkBox4_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox4.Checked == true)
+            try
             {
-                configuration.AppSettings.Settings["destacar"].Value = "on";
-                configuration.Save(ConfigurationSaveMode.Full, true);
+                if (checkBox4.Checked == true)
+                {
+                    configuration.AppSettings.Settings["destacar"].Value = "on";
+                    configuration.Save(ConfigurationSaveMode.Full, true);
+                }
+                else
+                {
+                    configuration.AppSettings.Settings["destacar"].Value = "off";
+                    configuration.Save(ConfigurationSaveMode.Full, true);
+                }
+                searchingListivew1();
             }
-            else
+            catch (Exception)
             {
-                configuration.AppSettings.Settings["destacar"].Value = "off";
-                configuration.Save(ConfigurationSaveMode.Full, true);
+                if (checkBox4.Checked == true)
+                {
+                    configuration.AppSettings.Settings["destacar"].Value = "on";
+                }
+                else
+                {
+                    configuration.AppSettings.Settings["destacar"].Value = "off";
+                }
+                searchingListivew1();
+                //throw;
             }
-            searchingListivew1();
+           
+           
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -679,6 +729,11 @@ namespace service_manager
 
         private void button7_Click(object sender, EventArgs e)
         {
+            if (textBox3.Text == "")
+            {
+                textBox3.Text = localip();
+            }
+
             int services = 0;
             if (listView1.CheckedItems.Count > 0)
             {
@@ -720,10 +775,24 @@ namespace service_manager
 
         private void button8_Click(object sender, EventArgs e)
         {
-            searchingListivew1();
-            Configuration configuration = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-            configuration.AppSettings.Settings["ip"].Value = textBox3.Text;
-            configuration.Save(ConfigurationSaveMode.Full, true);
+            if (textBox3.Text == "")
+            {
+                textBox3.Text = localip();
+            }
+
+            if (PingHost(textBox3.Text))
+            {
+                searchingListivew1();
+                Configuration configuration = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+                configuration.AppSettings.Settings["ip"].Value = textBox3.Text;
+                configuration.Save(ConfigurationSaveMode.Full, true);
+            }
+            else
+            {
+                MessageBox.Show("Sem conexão com a máquina!", "Sem conexão",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                textBox3.Text = localip();
+            }
+
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -741,5 +810,31 @@ namespace service_manager
                 return localIP;
             }
         }
+        public static bool PingHost(string nameOrAddress)
+        {
+            bool pingable = false;
+            Ping pinger = null;
+
+            try
+            {
+                pinger = new Ping();
+                PingReply reply = pinger.Send(nameOrAddress);
+                pingable = reply.Status == IPStatus.Success;
+            }
+            catch (PingException)
+            {
+                // Discard PingExceptions and return false;
+            }
+            finally
+            {
+                if (pinger != null)
+                {
+                    pinger.Dispose();
+                }
+            }
+
+            return pingable;
+        }
+
     }
 }
