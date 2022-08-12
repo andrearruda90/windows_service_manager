@@ -47,6 +47,7 @@
             this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button10 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -76,7 +77,7 @@
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(6, 165);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(659, 418);
+            this.listView1.Size = new System.Drawing.Size(711, 418);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
@@ -93,7 +94,7 @@
             // Nome
             // 
             this.Nome.Text = "Nome";
-            this.Nome.Width = 200;
+            this.Nome.Width = 250;
             // 
             // textBox1
             // 
@@ -109,7 +110,7 @@
             this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1});
             this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(691, 229);
+            this.listView2.Location = new System.Drawing.Point(724, 229);
             this.listView2.Name = "listView2";
             this.listView2.Size = new System.Drawing.Size(154, 354);
             this.listView2.TabIndex = 5;
@@ -149,7 +150,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(560, 143);
+            this.label1.Location = new System.Drawing.Point(117, 143);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 9;
@@ -159,7 +160,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(688, 213);
+            this.label2.Location = new System.Drawing.Point(721, 213);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(96, 13);
             this.label2.TabIndex = 10;
@@ -202,7 +203,7 @@
             this.button9.Image = global::service_manager.Properties.Resources.refresh002;
             this.button9.Location = new System.Drawing.Point(384, 30);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(43, 65);
+            this.button9.Size = new System.Drawing.Size(43, 67);
             this.button9.TabIndex = 18;
             this.toolTip1.SetToolTip(this.button9, "Atualizasr tabela");
             this.button9.UseVisualStyleBackColor = true;
@@ -228,7 +229,7 @@
             this.button4.Image = global::service_manager.Properties.Resources.lupa;
             this.button4.Location = new System.Drawing.Point(334, 30);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(44, 65);
+            this.button4.Size = new System.Drawing.Size(44, 67);
             this.button4.TabIndex = 8;
             this.toolTip1.SetToolTip(this.button4, "Buscar");
             this.button4.UseVisualStyleBackColor = true;
@@ -237,6 +238,7 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.White;
+            this.groupBox2.Controls.Add(this.button10);
             this.groupBox2.Controls.Add(this.button7);
             this.groupBox2.Controls.Add(this.button6);
             this.groupBox2.Controls.Add(this.button1);
@@ -245,10 +247,25 @@
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.groupBox2.Location = new System.Drawing.Point(453, 10);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(212, 117);
+            this.groupBox2.Size = new System.Drawing.Size(264, 117);
             this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Executar";
+            // 
+            // button10
+            // 
+            this.button10.AccessibleDescription = "Reiniciar";
+            this.button10.BackColor = System.Drawing.Color.Transparent;
+            this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button10.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button10.Image = global::service_manager.Properties.Resources.delete;
+            this.button10.Location = new System.Drawing.Point(212, 19);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(45, 92);
+            this.button10.TabIndex = 5;
+            this.toolTip1.SetToolTip(this.button10, "Deletar");
+            this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button7
             // 
@@ -321,7 +338,7 @@
             this.groupBox3.Controls.Add(this.button5);
             this.groupBox3.Controls.Add(this.button3);
             this.groupBox3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.groupBox3.Location = new System.Drawing.Point(691, 90);
+            this.groupBox3.Location = new System.Drawing.Point(724, 90);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(153, 118);
             this.groupBox3.TabIndex = 15;
@@ -377,7 +394,7 @@
             // 
             this.groupBox4.Controls.Add(this.button8);
             this.groupBox4.Controls.Add(this.textBox3);
-            this.groupBox4.Location = new System.Drawing.Point(691, 10);
+            this.groupBox4.Location = new System.Drawing.Point(724, 10);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(153, 72);
             this.groupBox4.TabIndex = 17;
@@ -406,7 +423,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(857, 595);
+            this.ClientSize = new System.Drawing.Size(885, 595);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.checkBox5);
             this.Controls.Add(this.groupBox3);
@@ -467,6 +484,7 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button10;
     }
 }
 

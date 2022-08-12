@@ -139,6 +139,7 @@
   <ItemGroup>
     <None Include="bin\Debug\icons\lupa.ico" />
     <None Include="bin\Debug\icons\refresh002.ico" />
+    <None Include="bin\Debug\icons\delete.ico" />
     <Content Include="Services-Icon-Big-256.ico" />
     <None Include="bin\Debug\icons\minus.ico" />
     <None Include="bin\Debug\icons\plus.ico" />

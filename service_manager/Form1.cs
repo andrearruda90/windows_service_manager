@@ -9,6 +9,7 @@ using System.Threading;
 using System.Net.Sockets;
 using System.Net;
 using System.Net.NetworkInformation;
+using System.Diagnostics;
 
 namespace service_manager
 {
@@ -96,8 +97,7 @@ namespace service_manager
                 string ipaddress = connection(textBox3.Text);
                 foreach (ServiceController scTemp in ServiceController.GetServices(ipaddress))
                 {
-
-                    ListViewItem item = new ListViewItem(new[] { scTemp.DisplayName, scTemp.Status.ToString(), scTemp.ServiceName });
+                    ListViewItem item = new ListViewItem(new[] { scTemp.DisplayName, scTemp.Status.ToString(), scTemp.ServiceName, scTemp.ServiceType.ToString() });
                     listView1.Items.Add(item);
 
                     if (checkBox4.Checked == true)
@@ -287,7 +287,7 @@ namespace service_manager
             }
             catch (Exception)
             {
-                MessageBox.Show("Verifique o endereço IP");
+                MessageBox.Show("Verifique o endereço IP","IP Inválido", MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
                 configuration.AppSettings.Settings["ip"].Value = localip();
                 configuration.Save(ConfigurationSaveMode.Full, true);
                 //throw;
@@ -836,5 +836,38 @@ namespace service_manager
             return pingable;
         }
 
+        public void button10_Click(object sender, EventArgs e)
+        {
+            if (listView1.SelectedItems.Count  == 1 )
+            {
+                DialogResult question = MessageBox.Show("Isso irá remover: ''" + listView1.SelectedItems[0].Text + "''. Continuar?", "Confirmação", MessageBoxButtons.YesNo,
+                                                                                                MessageBoxIcon.Question);
+                if (question == DialogResult.Yes)
+                {   
+
+                    var proc1 = new ProcessStartInfo();
+                    string anyCommand;
+                    proc1.UseShellExecute = true;
+                    anyCommand = "sc delete " + listView1.SelectedItems[0].SubItems[2].Text;
+                    proc1.WorkingDirectory = @"C:\Windows\System32";
+                    proc1.FileName = @"C:\Windows\System32\cmd.exe";
+                    proc1.Verb = "runas";
+                    proc1.Arguments = "/c " + anyCommand;
+                    proc1.WindowStyle = ProcessWindowStyle.Hidden;
+                    Process.Start(proc1);
+
+                    MessageBox.Show("Serviço deletado!", "Deletado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    searchingListivew1();
+                }
+                else
+                {
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Verifique a seleção", "Ação não permitida.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
     }
 }
