@@ -101,7 +101,7 @@
             this.textBox1.Location = new System.Drawing.Point(8, 53);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(320, 20);
-            this.textBox1.TabIndex = 3;
+            this.textBox1.TabIndex = 4;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // listView2
@@ -129,7 +129,7 @@
             this.checkBox1.Location = new System.Drawing.Point(177, 80);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(88, 17);
-            this.checkBox1.TabIndex = 6;
+            this.checkBox1.TabIndex = 2;
             this.checkBox1.Text = "Começa com";
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
@@ -141,7 +141,7 @@
             this.checkBox2.Location = new System.Drawing.Point(271, 80);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(62, 17);
-            this.checkBox2.TabIndex = 7;
+            this.checkBox2.TabIndex = 3;
             this.checkBox2.Text = "Contém";
             this.checkBox2.UseVisualStyleBackColor = true;
             this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
@@ -173,7 +173,7 @@
             this.checkBox3.Location = new System.Drawing.Point(8, 30);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(79, 17);
-            this.checkBox3.TabIndex = 12;
+            this.checkBox3.TabIndex = 0;
             this.checkBox3.Text = "Automática";
             this.toolTip1.SetToolTip(this.checkBox3, "Ative para realizar a pesquisa sem a necessidade do botão buscar.");
             this.checkBox3.UseVisualStyleBackColor = true;
@@ -204,7 +204,7 @@
             this.button9.Location = new System.Drawing.Point(384, 30);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(43, 67);
-            this.button9.TabIndex = 18;
+            this.button9.TabIndex = 6;
             this.toolTip1.SetToolTip(this.button9, "Atualizasr tabela");
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
@@ -216,7 +216,7 @@
             this.checkBox4.Location = new System.Drawing.Point(93, 30);
             this.checkBox4.Name = "checkBox4";
             this.checkBox4.Size = new System.Drawing.Size(69, 17);
-            this.checkBox4.TabIndex = 13;
+            this.checkBox4.TabIndex = 1;
             this.checkBox4.Text = "Destacar";
             this.toolTip1.SetToolTip(this.checkBox4, "Facilita a visibilidade do status dos serviços");
             this.checkBox4.UseVisualStyleBackColor = true;
@@ -230,7 +230,7 @@
             this.button4.Location = new System.Drawing.Point(334, 30);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(44, 67);
-            this.button4.TabIndex = 8;
+            this.button4.TabIndex = 5;
             this.toolTip1.SetToolTip(this.button4, "Buscar");
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
@@ -262,7 +262,7 @@
             this.button10.Location = new System.Drawing.Point(212, 19);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(45, 92);
-            this.button10.TabIndex = 5;
+            this.button10.TabIndex = 11;
             this.toolTip1.SetToolTip(this.button10, "Deletar");
             this.button10.UseVisualStyleBackColor = false;
             this.button10.Click += new System.EventHandler(this.button10_Click);
@@ -277,7 +277,7 @@
             this.button7.Location = new System.Drawing.Point(161, 19);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(45, 92);
-            this.button7.TabIndex = 4;
+            this.button7.TabIndex = 10;
             this.toolTip1.SetToolTip(this.button7, "Reiniciar");
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click);
@@ -292,7 +292,7 @@
             this.button6.Location = new System.Drawing.Point(110, 19);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(45, 92);
-            this.button6.TabIndex = 3;
+            this.button6.TabIndex = 9;
             this.toolTip1.SetToolTip(this.button6, "Pausar");
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
@@ -309,7 +309,7 @@
             this.button1.Name = "button1";
             this.button1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.button1.Size = new System.Drawing.Size(46, 92);
-            this.button1.TabIndex = 1;
+            this.button1.TabIndex = 7;
             this.toolTip1.SetToolTip(this.button1, "Iniciar");
             this.button1.UseMnemonic = false;
             this.button1.UseVisualStyleBackColor = false;
@@ -326,7 +326,7 @@
             this.button2.Location = new System.Drawing.Point(59, 19);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(45, 92);
-            this.button2.TabIndex = 2;
+            this.button2.TabIndex = 8;
             this.toolTip1.SetToolTip(this.button2, "Parar");
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -350,7 +350,7 @@
             this.textBox2.Location = new System.Drawing.Point(6, 32);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(141, 20);
-            this.textBox2.TabIndex = 13;
+            this.textBox2.TabIndex = 14;
             // 
             // button5
             // 
@@ -359,7 +359,7 @@
             this.button5.Location = new System.Drawing.Point(82, 63);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(65, 23);
-            this.button5.TabIndex = 11;
+            this.button5.TabIndex = 16;
             this.button5.Text = "Remover";
             this.toolTip1.SetToolTip(this.button5, "Remover");
             this.button5.UseVisualStyleBackColor = false;
@@ -372,7 +372,7 @@
             this.button3.Location = new System.Drawing.Point(6, 63);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(65, 23);
-            this.button3.TabIndex = 4;
+            this.button3.TabIndex = 15;
             this.button3.Text = "Adicionar";
             this.toolTip1.SetToolTip(this.button3, "Adicionar");
             this.button3.UseVisualStyleBackColor = false;
@@ -385,7 +385,7 @@
             this.checkBox5.Location = new System.Drawing.Point(6, 142);
             this.checkBox5.Name = "checkBox5";
             this.checkBox5.Size = new System.Drawing.Size(105, 17);
-            this.checkBox5.TabIndex = 16;
+            this.checkBox5.TabIndex = 17;
             this.checkBox5.Text = "Selecionar todos";
             this.checkBox5.UseVisualStyleBackColor = true;
             this.checkBox5.CheckedChanged += new System.EventHandler(this.checkBox5_CheckedChanged);
@@ -406,7 +406,7 @@
             this.button8.Location = new System.Drawing.Point(82, 45);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(64, 21);
-            this.button8.TabIndex = 1;
+            this.button8.TabIndex = 13;
             this.button8.Text = "Conectar";
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
@@ -416,7 +416,7 @@
             this.textBox3.Location = new System.Drawing.Point(6, 19);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(141, 20);
-            this.textBox3.TabIndex = 0;
+            this.textBox3.TabIndex = 12;
             // 
             // Form1
             // 
