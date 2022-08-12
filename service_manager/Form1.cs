@@ -58,7 +58,6 @@ namespace service_manager
             {
                 textBox3.Text = configuration.AppSettings.Settings["ip"].Value;
                 loadUserPreferences();
-                //checkAutomaticbutton();
                 loadingListview2();
                 loadingListView1();
             }
@@ -66,7 +65,6 @@ namespace service_manager
             {
                 textBox3.Text = localip();
                 loadUserPreferences();
-                //checkAutomaticbutton();
                 loadingListview2();
                 loadingListView1();
             }
