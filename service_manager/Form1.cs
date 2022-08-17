@@ -20,8 +20,9 @@ namespace service_manager
         public string getUserPreferences(string key)
         {
             return configuration.AppSettings.Settings[key].Value;
+            
         }
-
+        
         public void loadUserPreferences()
         {
             if (getUserPreferences("automatico") == "on")
@@ -44,6 +45,17 @@ namespace service_manager
                 checkBox2.Checked = false;
                 checkBox1.Checked = true;
             }
+
+            listView2.Enabled = true;
+            textBox1.Enabled = true;
+            checkBox1.Enabled = true;
+            checkBox2.Enabled = true;
+            checkBox3.Enabled = true;
+            checkBox4.Enabled = true;
+            button9.Enabled = true;
+            textBox2.Enabled = true;
+            button3.Enabled = true;
+            button5.Enabled = true;
         }
 
         public Form1()
@@ -53,10 +65,12 @@ namespace service_manager
 
         public void Form1_Load(object sender, EventArgs e)
         {
+            label3.ForeColor = Color.LightGray;
             textBox3.Text = localip();
             if (PingHost(textBox3.Text))
             {
                 textBox3.Text = configuration.AppSettings.Settings["ip"].Value;
+                label3.ForeColor = Color.LightGreen;
                 loadUserPreferences();
                 loadingListview2();
                 loadingListView1();
@@ -90,64 +104,77 @@ namespace service_manager
             listView1.Sorting = SortOrder.Ascending;
             
             listView1.Items.Clear();
-            if (textBox3.Text != "")
+            try
             {
-                string ipaddress = connection(textBox3.Text);
-                foreach (ServiceController scTemp in ServiceController.GetServices(ipaddress))
+                if (textBox3.Text != "")
                 {
-                    ListViewItem item = new ListViewItem(new[] { scTemp.DisplayName, scTemp.Status.ToString(), scTemp.ServiceName, scTemp.ServiceType.ToString() });
-                    listView1.Items.Add(item);
+                    string ipaddress = connection(textBox3.Text);
 
-                    if (checkBox4.Checked == true)
+                    foreach (ServiceController scTemp in ServiceController.GetServices(ipaddress))
                     {
-                        if (item.SubItems[1].Text.Contains("Stopped"))
+                        ListViewItem item = new ListViewItem(new[] { scTemp.DisplayName, scTemp.Status.ToString(), scTemp.ServiceName, scTemp.ServiceType.ToString() });
+                        listView1.Items.Add(item);
+
+                        if (checkBox4.Checked == true)
                         {
-                            //item.ForeColor = Color.DarkRed;
-                        }
-                        else if (item.SubItems[1].Text.Contains("Running"))
-                        {
-                            item.BackColor = Color.LightSeaGreen;
-                            item.ForeColor = Color.Black;
-                        }
-                        else if (item.SubItems[1].Text.Contains("Paused"))
-                        {
-                            item.BackColor = Color.LightYellow;
-                            item.ForeColor = Color.Black;
+                            if (item.SubItems[1].Text.Contains("Stopped"))
+                            {
+                                //item.ForeColor = Color.DarkRed;
+                            }
+                            else if (item.SubItems[1].Text.Contains("Running"))
+                            {
+                                item.BackColor = Color.LightSeaGreen;
+                                item.ForeColor = Color.Black;
+                            }
+                            else if (item.SubItems[1].Text.Contains("Paused"))
+                            {
+                                item.BackColor = Color.LightYellow;
+                                item.ForeColor = Color.Black;
+                            }
                         }
                     }
                 }
-            }
-            else
-            {
-                foreach (ServiceController scTemp in ServiceController.GetServices())
+                else
                 {
-
-                    ListViewItem item = new ListViewItem(new[] { scTemp.DisplayName, scTemp.Status.ToString(), scTemp.ServiceName });
-                    listView1.Items.Add(item);
-
-                    if (checkBox4.Checked == true)
+                    foreach (ServiceController scTemp in ServiceController.GetServices())
                     {
-                        if (item.SubItems[1].Text.Contains("Stopped"))
+
+                        ListViewItem item = new ListViewItem(new[] { scTemp.DisplayName, scTemp.Status.ToString(), scTemp.ServiceName });
+                        listView1.Items.Add(item);
+
+                        if (checkBox4.Checked == true)
                         {
-                            //item.ForeColor = Color.DarkRed;
-                        }
-                        else if (item.SubItems[1].Text.Contains("Running"))
-                        {
-                            item.BackColor = Color.LightSeaGreen;
-                            item.ForeColor = Color.Black;
-                        }
-                        else if (item.SubItems[1].Text.Contains("Paused"))
-                        {
-                            item.BackColor = Color.LightYellow;
-                            item.ForeColor = Color.Black;
+                            if (item.SubItems[1].Text.Contains("Stopped"))
+                            {
+                                //item.ForeColor = Color.DarkRed;
+                            }
+                            else if (item.SubItems[1].Text.Contains("Running"))
+                            {
+                                item.BackColor = Color.LightSeaGreen;
+                                item.ForeColor = Color.Black;
+                            }
+                            else if (item.SubItems[1].Text.Contains("Paused"))
+                            {
+                                item.BackColor = Color.LightYellow;
+                                item.ForeColor = Color.Black;
+                            }
                         }
                     }
                 }
+
             }
-            
-            label1.Text = listView1.Items.Count.ToString() + " correspondências";
-            
-         }
+            catch (Exception)
+            {
+                textBox3.Text = localip();
+                label3.ForeColor = Color.LightGreen;
+                searchingListivew1();
+                //throw;
+            }
+            finally
+            {
+                label1.Text = listView1.Items.Count.ToString() + " correspondências";
+            }
+        }
         public void searchingListivew1()
         {
             
@@ -285,9 +312,22 @@ namespace service_manager
             }
             catch (Exception)
             {
-                MessageBox.Show("Verifique o endereço IP","IP Inválido", MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
-                configuration.AppSettings.Settings["ip"].Value = localip();
-                configuration.Save(ConfigurationSaveMode.Full, true);
+                try
+                {
+                    MessageBox.Show("Verifique o endereço IP", "IP Inválido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    configuration.AppSettings.Settings["ip"].Value = localip();
+                    configuration.Save(ConfigurationSaveMode.Full, true);
+                    label3.ForeColor = Color.LightGray;
+
+
+                }
+                catch (Exception)
+                {
+                    label3.ForeColor = Color.LightGray;
+
+                    //throw;
+                }
+
                 //throw;
             }
       
@@ -773,9 +813,11 @@ namespace service_manager
 
         private void button8_Click(object sender, EventArgs e)
         {
+            label3.ForeColor = Color.LightGray;
             if (textBox3.Text == "")
             {
                 textBox3.Text = localip();
+                searchingListivew1();
             }
 
             if (PingHost(textBox3.Text))
@@ -784,11 +826,36 @@ namespace service_manager
                 Configuration configuration = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
                 configuration.AppSettings.Settings["ip"].Value = textBox3.Text;
                 configuration.Save(ConfigurationSaveMode.Full, true);
+                
+                if (PingHost(textBox3.Text))
+                {
+                    label3.ForeColor = Color.LightGreen;
+                }
+                listView2.Enabled = true;
+                textBox1.Enabled = true;
+                checkBox1.Enabled = true;
+                checkBox2.Enabled = true;
+                checkBox3.Enabled = true;
+                checkBox4.Enabled = true;
+                button9.Enabled = true;
+                textBox2.Enabled = true;
+                button3.Enabled = true;
+                button5.Enabled = true;
             }
             else
             {
                 MessageBox.Show("Sem conexão com a máquina!", "Sem conexão",MessageBoxButtons.OK,MessageBoxIcon.Error);
-                textBox3.Text = localip();
+                listView1.Items.Clear();
+                listView2.Enabled = false;
+                textBox1.Enabled = false;
+                checkBox1.Enabled = false;
+                checkBox2.Enabled = false;
+                checkBox3.Enabled = false;
+                checkBox4.Enabled = false;
+                button9.Enabled = false;
+                textBox2.Enabled = false;
+                button3.Enabled = false;
+                button5.Enabled = false;
             }
 
         }

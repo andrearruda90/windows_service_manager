@@ -61,6 +61,7 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.button8 = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -392,6 +393,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.label3);
             this.groupBox4.Controls.Add(this.button8);
             this.groupBox4.Controls.Add(this.textBox3);
             this.groupBox4.Location = new System.Drawing.Point(724, 10);
@@ -413,10 +415,22 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(6, 19);
+            this.textBox3.Location = new System.Drawing.Point(38, 19);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(141, 20);
+            this.textBox3.Size = new System.Drawing.Size(108, 20);
             this.textBox3.TabIndex = 12;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(6, -3);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(29, 42);
+            this.label3.TabIndex = 14;
+            this.label3.Text = ".";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form1
             // 
@@ -485,6 +499,7 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Label label3;
     }
 }
 
