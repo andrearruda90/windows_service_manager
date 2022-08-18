@@ -70,6 +70,7 @@ namespace service_manager
             if (PingHost(txb_Conectar.Text))
             {
                 txb_Conectar.Text = configuration.AppSettings.Settings["ip"].Value;
+                txb_Conectar.Text = configuration.AppSettings.Settings["ip"].Value;
                 lbl_IndicadorStatusConexao.ForeColor = Color.LightGreen;
                 loadUserPreferences();
                 loadingListview2();

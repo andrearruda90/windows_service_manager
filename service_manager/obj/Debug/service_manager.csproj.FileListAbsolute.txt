@@ -24,7 +24,6 @@ C:\Users\andre\source\repos\service_manager\service_manager\bin\Debug\service_ma
 C:\Users\andre\source\repos\service_manager\service_manager\bin\Debug\service_manager.application
 C:\Users\andre\source\repos\service_manager\service_manager\obj\Debug\service_manager.exe.manifest
 C:\Users\andre\source\repos\service_manager\service_manager\obj\Debug\service_manager.application
-C:\Users\andre.arruda\Source\Repos\service_manager\service_manager\bin\Debug\service_manager.exe.config
 C:\Users\andre.arruda\Source\Repos\service_manager\service_manager\bin\Debug\service_manager.exe.manifest
 C:\Users\andre.arruda\Source\Repos\service_manager\service_manager\bin\Debug\service_manager.application
 C:\Users\andre.arruda\Source\Repos\service_manager\service_manager\bin\Debug\service_manager.exe
@@ -41,7 +40,6 @@ C:\Users\andre.arruda\Source\Repos\service_manager\service_manager\bin\Debug\Sys
 C:\Users\andre.arruda\Source\Repos\service_manager\service_manager\bin\Debug\Topshelf.xml
 C:\Users\andre.arruda\Source\Repos\service_manager\service_manager\obj\Debug\service_manager.csproj.AssemblyReference.cache
 C:\Users\andre.arruda\Source\Repos\service_manager\service_manager\obj\Debug\service_manager.csproj.SuggestedBindingRedirects.cache
-C:\Users\andre.arruda\Source\Repos\service_manager\service_manager\obj\Debug\service_manager.Form1.resources
 C:\Users\andre.arruda\Source\Repos\service_manager\service_manager\obj\Debug\service_manager.Properties.Resources.resources
 C:\Users\andre.arruda\Source\Repos\service_manager\service_manager\obj\Debug\service_manager.csproj.GenerateResource.cache
 C:\Users\andre.arruda\Source\Repos\service_manager\service_manager\obj\Debug\service_manager.csproj.CoreCompileInputs.cache
@@ -50,3 +48,5 @@ C:\Users\andre.arruda\Source\Repos\service_manager\service_manager\obj\Debug\ser
 C:\Users\andre.arruda\Source\Repos\service_manager\service_manager\obj\Debug\service_manager.csproj.CopyComplete
 C:\Users\andre.arruda\Source\Repos\service_manager\service_manager\obj\Debug\service_manager.exe
 C:\Users\andre.arruda\Source\Repos\service_manager\service_manager\obj\Debug\service_manager.pdb
+C:\Users\andre.arruda\Source\Repos\service_manager\service_manager\obj\Debug\service_manager.frm_PainelPrincipal.resources
+C:\Users\andre.arruda\Source\Repos\service_manager\service_manager\bin\Debug\service_manager.exe.config
