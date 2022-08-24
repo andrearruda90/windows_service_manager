@@ -62,6 +62,9 @@
             this.lbl_IndicadorStatusConexao = new System.Windows.Forms.Label();
             this.btn_Conectar = new System.Windows.Forms.Button();
             this.txb_Conectar = new System.Windows.Forms.TextBox();
+            this.btn_Limpar = new System.Windows.Forms.Button();
+            this.Tipo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Parável = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.gpb_Pesquisa.SuspendLayout();
             this.gpb_Executar.SuspendLayout();
             this.gpb_BuscaRapida.SuspendLayout();
@@ -70,15 +73,20 @@
             // 
             // lvw_Servicos
             // 
+            this.lvw_Servicos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lvw_Servicos.BackColor = System.Drawing.Color.White;
             this.lvw_Servicos.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Serviço,
             this.Status,
-            this.Nome});
+            this.Nome,
+            this.Tipo,
+            this.Parável});
             this.lvw_Servicos.HideSelection = false;
             this.lvw_Servicos.Location = new System.Drawing.Point(6, 165);
             this.lvw_Servicos.Name = "lvw_Servicos";
-            this.lvw_Servicos.Size = new System.Drawing.Size(711, 418);
+            this.lvw_Servicos.Size = new System.Drawing.Size(870, 418);
             this.lvw_Servicos.TabIndex = 0;
             this.lvw_Servicos.UseCompatibleStateImageBehavior = false;
             // 
@@ -101,19 +109,21 @@
             // 
             this.txb_Pesquisar.Location = new System.Drawing.Point(8, 53);
             this.txb_Pesquisar.Name = "txb_Pesquisar";
-            this.txb_Pesquisar.Size = new System.Drawing.Size(320, 20);
+            this.txb_Pesquisar.Size = new System.Drawing.Size(284, 20);
             this.txb_Pesquisar.TabIndex = 4;
             this.txb_Pesquisar.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // lvw_BuscaRapida
             // 
+            this.lvw_BuscaRapida.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lvw_BuscaRapida.BackColor = System.Drawing.Color.White;
             this.lvw_BuscaRapida.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1});
             this.lvw_BuscaRapida.HideSelection = false;
-            this.lvw_BuscaRapida.Location = new System.Drawing.Point(724, 229);
+            this.lvw_BuscaRapida.Location = new System.Drawing.Point(882, 165);
             this.lvw_BuscaRapida.Name = "lvw_BuscaRapida";
-            this.lvw_BuscaRapida.Size = new System.Drawing.Size(154, 354);
+            this.lvw_BuscaRapida.Size = new System.Drawing.Size(154, 418);
             this.lvw_BuscaRapida.TabIndex = 5;
             this.lvw_BuscaRapida.UseCompatibleStateImageBehavior = false;
             this.lvw_BuscaRapida.SelectedIndexChanged += new System.EventHandler(this.listView2_SelectedIndexChanged);
@@ -127,10 +137,11 @@
             // 
             this.ckb_ComecaCom.AutoSize = true;
             this.ckb_ComecaCom.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ckb_ComecaCom.Location = new System.Drawing.Point(177, 80);
+            this.ckb_ComecaCom.Location = new System.Drawing.Point(146, 79);
             this.ckb_ComecaCom.Name = "ckb_ComecaCom";
             this.ckb_ComecaCom.Size = new System.Drawing.Size(88, 17);
             this.ckb_ComecaCom.TabIndex = 2;
+            this.ckb_ComecaCom.TabStop = false;
             this.ckb_ComecaCom.Text = "Começa com";
             this.ckb_ComecaCom.UseVisualStyleBackColor = true;
             this.ckb_ComecaCom.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
@@ -139,10 +150,11 @@
             // 
             this.ckb_Contem.AutoSize = true;
             this.ckb_Contem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ckb_Contem.Location = new System.Drawing.Point(271, 80);
+            this.ckb_Contem.Location = new System.Drawing.Point(236, 79);
             this.ckb_Contem.Name = "ckb_Contem";
             this.ckb_Contem.Size = new System.Drawing.Size(62, 17);
             this.ckb_Contem.TabIndex = 3;
+            this.ckb_Contem.TabStop = false;
             this.ckb_Contem.Text = "Contém";
             this.ckb_Contem.UseVisualStyleBackColor = true;
             this.ckb_Contem.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
@@ -159,9 +171,11 @@
             // 
             // lbl_SelecioneUmItem
             // 
+            this.lbl_SelecioneUmItem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_SelecioneUmItem.AutoSize = true;
             this.lbl_SelecioneUmItem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lbl_SelecioneUmItem.Location = new System.Drawing.Point(721, 213);
+            this.lbl_SelecioneUmItem.Location = new System.Drawing.Point(879, 146);
             this.lbl_SelecioneUmItem.Name = "lbl_SelecioneUmItem";
             this.lbl_SelecioneUmItem.Size = new System.Drawing.Size(96, 13);
             this.lbl_SelecioneUmItem.TabIndex = 10;
@@ -175,6 +189,7 @@
             this.ckb_Automatico.Name = "ckb_Automatico";
             this.ckb_Automatico.Size = new System.Drawing.Size(79, 17);
             this.ckb_Automatico.TabIndex = 0;
+            this.ckb_Automatico.TabStop = false;
             this.ckb_Automatico.Text = "Automática";
             this.toolTip1.SetToolTip(this.ckb_Automatico, "Ative para realizar a pesquisa sem a necessidade do botão buscar.");
             this.ckb_Automatico.UseVisualStyleBackColor = true;
@@ -182,7 +197,10 @@
             // 
             // gpb_Pesquisa
             // 
+            this.gpb_Pesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gpb_Pesquisa.BackColor = System.Drawing.Color.White;
+            this.gpb_Pesquisa.Controls.Add(this.btn_Limpar);
             this.gpb_Pesquisa.Controls.Add(this.btn_Atualizar);
             this.gpb_Pesquisa.Controls.Add(this.ckb_Destacar);
             this.gpb_Pesquisa.Controls.Add(this.ckb_Automatico);
@@ -218,6 +236,7 @@
             this.ckb_Destacar.Name = "ckb_Destacar";
             this.ckb_Destacar.Size = new System.Drawing.Size(69, 17);
             this.ckb_Destacar.TabIndex = 1;
+            this.ckb_Destacar.TabStop = false;
             this.ckb_Destacar.Text = "Destacar";
             this.toolTip1.SetToolTip(this.ckb_Destacar, "Facilita a visibilidade do status dos serviços");
             this.ckb_Destacar.UseVisualStyleBackColor = true;
@@ -238,6 +257,7 @@
             // 
             // gpb_Executar
             // 
+            this.gpb_Executar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.gpb_Executar.BackColor = System.Drawing.Color.White;
             this.gpb_Executar.Controls.Add(this.btn_Deletar);
             this.gpb_Executar.Controls.Add(this.btn_Reiniciar);
@@ -256,6 +276,7 @@
             // btn_Deletar
             // 
             this.btn_Deletar.AccessibleDescription = "Reiniciar";
+            this.btn_Deletar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn_Deletar.BackColor = System.Drawing.Color.Transparent;
             this.btn_Deletar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btn_Deletar.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -271,6 +292,7 @@
             // btn_Reiniciar
             // 
             this.btn_Reiniciar.AccessibleDescription = "Reiniciar";
+            this.btn_Reiniciar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn_Reiniciar.BackColor = System.Drawing.Color.Transparent;
             this.btn_Reiniciar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btn_Reiniciar.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -286,6 +308,7 @@
             // btn_Pausar
             // 
             this.btn_Pausar.AccessibleDescription = "Pausar";
+            this.btn_Pausar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn_Pausar.BackColor = System.Drawing.Color.Transparent;
             this.btn_Pausar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btn_Pausar.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -302,6 +325,7 @@
             // 
             this.btn_Iniciar.AccessibleDescription = "Iniciar";
             this.btn_Iniciar.AccessibleName = "Iniciar";
+            this.btn_Iniciar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn_Iniciar.BackColor = System.Drawing.Color.Transparent;
             this.btn_Iniciar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btn_Iniciar.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -319,6 +343,7 @@
             // btn_Parar
             // 
             this.btn_Parar.AccessibleDescription = "Parar";
+            this.btn_Parar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn_Parar.AutoEllipsis = true;
             this.btn_Parar.BackColor = System.Drawing.Color.Transparent;
             this.btn_Parar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -334,14 +359,15 @@
             // 
             // gpb_BuscaRapida
             // 
+            this.gpb_BuscaRapida.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.gpb_BuscaRapida.BackColor = System.Drawing.Color.White;
             this.gpb_BuscaRapida.Controls.Add(this.txb_BuscaRapida);
             this.gpb_BuscaRapida.Controls.Add(this.btn_DeletarBuscaRapida);
             this.gpb_BuscaRapida.Controls.Add(this.btn_AdicionarBuscaRapida);
             this.gpb_BuscaRapida.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.gpb_BuscaRapida.Location = new System.Drawing.Point(724, 90);
+            this.gpb_BuscaRapida.Location = new System.Drawing.Point(882, 12);
             this.gpb_BuscaRapida.Name = "gpb_BuscaRapida";
-            this.gpb_BuscaRapida.Size = new System.Drawing.Size(153, 118);
+            this.gpb_BuscaRapida.Size = new System.Drawing.Size(154, 116);
             this.gpb_BuscaRapida.TabIndex = 15;
             this.gpb_BuscaRapida.TabStop = false;
             this.gpb_BuscaRapida.Text = "Busca rápida";
@@ -357,7 +383,7 @@
             // 
             this.btn_DeletarBuscaRapida.BackColor = System.Drawing.Color.Transparent;
             this.btn_DeletarBuscaRapida.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_DeletarBuscaRapida.Location = new System.Drawing.Point(82, 63);
+            this.btn_DeletarBuscaRapida.Location = new System.Drawing.Point(82, 78);
             this.btn_DeletarBuscaRapida.Name = "btn_DeletarBuscaRapida";
             this.btn_DeletarBuscaRapida.Size = new System.Drawing.Size(65, 23);
             this.btn_DeletarBuscaRapida.TabIndex = 16;
@@ -370,7 +396,7 @@
             // 
             this.btn_AdicionarBuscaRapida.BackColor = System.Drawing.Color.Transparent;
             this.btn_AdicionarBuscaRapida.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_AdicionarBuscaRapida.Location = new System.Drawing.Point(6, 63);
+            this.btn_AdicionarBuscaRapida.Location = new System.Drawing.Point(6, 78);
             this.btn_AdicionarBuscaRapida.Name = "btn_AdicionarBuscaRapida";
             this.btn_AdicionarBuscaRapida.Size = new System.Drawing.Size(65, 23);
             this.btn_AdicionarBuscaRapida.TabIndex = 15;
@@ -387,18 +413,21 @@
             this.ckb_SelecionarTodos.Name = "ckb_SelecionarTodos";
             this.ckb_SelecionarTodos.Size = new System.Drawing.Size(105, 17);
             this.ckb_SelecionarTodos.TabIndex = 17;
+            this.ckb_SelecionarTodos.TabStop = false;
             this.ckb_SelecionarTodos.Text = "Selecionar todos";
             this.ckb_SelecionarTodos.UseVisualStyleBackColor = true;
             this.ckb_SelecionarTodos.CheckedChanged += new System.EventHandler(this.checkBox5_CheckedChanged);
             // 
             // gpb_Conectar
             // 
+            this.gpb_Conectar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.gpb_Conectar.BackColor = System.Drawing.Color.White;
             this.gpb_Conectar.Controls.Add(this.lbl_IndicadorStatusConexao);
             this.gpb_Conectar.Controls.Add(this.btn_Conectar);
             this.gpb_Conectar.Controls.Add(this.txb_Conectar);
-            this.gpb_Conectar.Location = new System.Drawing.Point(724, 10);
+            this.gpb_Conectar.Location = new System.Drawing.Point(723, 12);
             this.gpb_Conectar.Name = "gpb_Conectar";
-            this.gpb_Conectar.Size = new System.Drawing.Size(153, 72);
+            this.gpb_Conectar.Size = new System.Drawing.Size(153, 116);
             this.gpb_Conectar.TabIndex = 17;
             this.gpb_Conectar.TabStop = false;
             this.gpb_Conectar.Text = "Conectar";
@@ -408,7 +437,7 @@
             this.lbl_IndicadorStatusConexao.AutoSize = true;
             this.lbl_IndicadorStatusConexao.BackColor = System.Drawing.Color.Transparent;
             this.lbl_IndicadorStatusConexao.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_IndicadorStatusConexao.Location = new System.Drawing.Point(6, -3);
+            this.lbl_IndicadorStatusConexao.Location = new System.Drawing.Point(6, 10);
             this.lbl_IndicadorStatusConexao.Name = "lbl_IndicadorStatusConexao";
             this.lbl_IndicadorStatusConexao.Size = new System.Drawing.Size(29, 42);
             this.lbl_IndicadorStatusConexao.TabIndex = 14;
@@ -417,7 +446,7 @@
             // 
             // btn_Conectar
             // 
-            this.btn_Conectar.Location = new System.Drawing.Point(82, 45);
+            this.btn_Conectar.Location = new System.Drawing.Point(79, 78);
             this.btn_Conectar.Name = "btn_Conectar";
             this.btn_Conectar.Size = new System.Drawing.Size(64, 21);
             this.btn_Conectar.TabIndex = 13;
@@ -427,18 +456,41 @@
             // 
             // txb_Conectar
             // 
-            this.txb_Conectar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txb_Conectar.Location = new System.Drawing.Point(38, 19);
+            this.txb_Conectar.Location = new System.Drawing.Point(35, 33);
             this.txb_Conectar.Name = "txb_Conectar";
             this.txb_Conectar.Size = new System.Drawing.Size(108, 20);
             this.txb_Conectar.TabIndex = 12;
+            // 
+            // btn_Limpar
+            // 
+            this.btn_Limpar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btn_Limpar.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btn_Limpar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Limpar.Image")));
+            this.btn_Limpar.Location = new System.Drawing.Point(299, 52);
+            this.btn_Limpar.Name = "btn_Limpar";
+            this.btn_Limpar.Size = new System.Drawing.Size(29, 23);
+            this.btn_Limpar.TabIndex = 7;
+            this.btn_Limpar.TabStop = false;
+            this.btn_Limpar.UseVisualStyleBackColor = true;
+            this.btn_Limpar.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // Tipo
+            // 
+            this.Tipo.Text = "Tipo";
+            this.Tipo.Width = 250;
+            // 
+            // Parável
+            // 
+            this.Parável.Text = "Parável";
+            this.Parável.Width = 130;
             // 
             // frm_PainelPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(885, 595);
+            this.ClientSize = new System.Drawing.Size(1048, 595);
             this.Controls.Add(this.gpb_Conectar);
             this.Controls.Add(this.ckb_SelecionarTodos);
             this.Controls.Add(this.gpb_BuscaRapida);
@@ -449,9 +501,7 @@
             this.Controls.Add(this.lvw_BuscaRapida);
             this.Controls.Add(this.lvw_Servicos);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
             this.Name = "frm_PainelPrincipal";
             this.Text = "Gerenciador de Serviços do Windows - por André Arruda";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -501,6 +551,9 @@
         private System.Windows.Forms.Button btn_Atualizar;
         private System.Windows.Forms.Button btn_Deletar;
         private System.Windows.Forms.Label lbl_IndicadorStatusConexao;
+        private System.Windows.Forms.Button btn_Limpar;
+        private System.Windows.Forms.ColumnHeader Tipo;
+        private System.Windows.Forms.ColumnHeader Parável;
     }
 }
 

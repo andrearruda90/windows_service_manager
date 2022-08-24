@@ -55,14 +55,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="service_manager.exe" size="305592">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="service_manager.exe" size="304056">
       <assemblyIdentity name="service_manager" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>7SYoH60MbhhnSmmgNwlmu+64VuVUvbcXL+BAU3661/g=</dsig:DigestValue>
+        <dsig:DigestValue>tF+VIzqe50pPfeMS2Zj8sBjC4UIYFmsTw8BK0uYf8zA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

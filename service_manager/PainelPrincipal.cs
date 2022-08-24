@@ -67,6 +67,7 @@ namespace service_manager
         {
             lbl_IndicadorStatusConexao.ForeColor = Color.LightGray;
             txb_Conectar.Text = localip();
+            btn_Limpar.Enabled = false;
             if (PingHost(txb_Conectar.Text))
             {
                 txb_Conectar.Text = configuration.AppSettings.Settings["ip"].Value;
@@ -113,7 +114,7 @@ namespace service_manager
 
                     foreach (ServiceController scTemp in ServiceController.GetServices(ipaddress))
                     {
-                        ListViewItem item = new ListViewItem(new[] { scTemp.DisplayName, scTemp.Status.ToString(), scTemp.ServiceName, scTemp.ServiceType.ToString() });
+                        ListViewItem item = new ListViewItem(new[] { scTemp.DisplayName, scTemp.Status.ToString(), scTemp.ServiceName, scTemp.ServiceType.ToString(), scTemp.CanStop.ToString() });
                         lvw_Servicos.Items.Add(item);
 
                         if (ckb_Destacar.Checked == true)
@@ -140,7 +141,7 @@ namespace service_manager
                     foreach (ServiceController scTemp in ServiceController.GetServices())
                     {
 
-                        ListViewItem item = new ListViewItem(new[] { scTemp.DisplayName, scTemp.Status.ToString(), scTemp.ServiceName });
+                        ListViewItem item = new ListViewItem(new[] {scTemp.DisplayName, scTemp.Status.ToString(), scTemp.ServiceName, scTemp.ServiceType.ToString(), scTemp.CanStop.ToString() });
                         lvw_Servicos.Items.Add(item);
 
                         if (ckb_Destacar.Checked == true)
@@ -193,7 +194,7 @@ namespace service_manager
                         {
                             if (scTemp.DisplayName.ToLower().Contains(txb_Pesquisar.Text.ToLower()) == true)
                             {
-                                ListViewItem item = new ListViewItem(new[] { scTemp.DisplayName, scTemp.Status.ToString(), scTemp.ServiceName });
+                                ListViewItem item = new ListViewItem(new[] { scTemp.DisplayName, scTemp.Status.ToString(), scTemp.ServiceName, scTemp.ServiceType.ToString(), scTemp.CanStop.ToString() });
                                 lvw_Servicos.Items.Add(item);
                                 if (ckb_Destacar.Checked == true)
                                 {
@@ -223,7 +224,7 @@ namespace service_manager
                         {
                             if (scTemp.DisplayName.ToLower().StartsWith(txb_Pesquisar.Text.ToLower()) == true)
                             {
-                                ListViewItem item = new ListViewItem(new[] { scTemp.DisplayName, scTemp.Status.ToString(), scTemp.ServiceName });
+                                ListViewItem item = new ListViewItem(new[] { scTemp.DisplayName, scTemp.Status.ToString(), scTemp.ServiceName, scTemp.ServiceType.ToString(), scTemp.CanStop.ToString() });
                                 lvw_Servicos.Items.Add(item);
                                 if (ckb_Destacar.Checked == true)
                                 {
@@ -256,7 +257,7 @@ namespace service_manager
                         {
                             if (scTemp.DisplayName.ToLower().Contains(txb_Pesquisar.Text.ToLower()) == true)
                             {
-                                ListViewItem item = new ListViewItem(new[] { scTemp.DisplayName, scTemp.Status.ToString(), scTemp.ServiceName });
+                                ListViewItem item = new ListViewItem(new[] { scTemp.DisplayName, scTemp.Status.ToString(), scTemp.ServiceName, scTemp.ServiceType.ToString(), scTemp.CanStop.ToString() });
                                 lvw_Servicos.Items.Add(item);
                                 if (ckb_Destacar.Checked == true)
                                 {
@@ -285,7 +286,7 @@ namespace service_manager
                         {
                             if (scTemp.DisplayName.ToLower().StartsWith(txb_Pesquisar.Text.ToLower()) == true)
                             {
-                                ListViewItem item = new ListViewItem(new[] { scTemp.DisplayName, scTemp.Status.ToString(), scTemp.ServiceName });
+                                ListViewItem item = new ListViewItem(new[] { scTemp.DisplayName, scTemp.Status.ToString(), scTemp.ServiceName, scTemp.ServiceType.ToString(), scTemp.CanStop.ToString() });
                                 lvw_Servicos.Items.Add(item);
                                 if (ckb_Destacar.Checked == true)
                                 {
@@ -346,6 +347,15 @@ namespace service_manager
         }
         public void textBox1_TextChanged(object sender, EventArgs e)
         {
+            if (txb_Pesquisar.Text == "")
+            {
+                btn_Limpar.Enabled = false;
+            }
+            else
+            {
+                btn_Limpar.Enabled = true;
+            }
+
             if (ckb_Automatico.Checked == true)
             {
                 searchingListivew1();
@@ -934,6 +944,11 @@ namespace service_manager
             {
                 MessageBox.Show("Verifique a seleção", "Ação não permitida.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            txb_Pesquisar.Text = "";
         }
     }
 }

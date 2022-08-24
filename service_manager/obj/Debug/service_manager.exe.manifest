@@ -55,14 +55,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="service_manager.exe" size="304056">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="service_manager.exe" size="305592">
       <assemblyIdentity name="service_manager" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>+C4WLEOUc/ztnca+ReqmB/WuWaZOro7svG09eDgxmXU=</dsig:DigestValue>
+        <dsig:DigestValue>7SYoH60MbhhnSmmgNwlmu+64VuVUvbcXL+BAU3661/g=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -168,13 +168,13 @@
       <dsig:DigestValue>LSthabCCl17/vHIf7tEq4kWTMtugjjMrHMzSMABaA3E=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="service_manager.exe.config" size="371">
+  <file name="service_manager.exe.config" size="360">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>HP0sNaLier0DdseYtH+K1MTo66bAoph8OC3JJn2yiwk=</dsig:DigestValue>
+      <dsig:DigestValue>tVyn08PiOcH5R1grP/FvyBUM82/CGmsUpDpIQlfbUbw=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Services-Icon-Big-256.ico" size="131348">
