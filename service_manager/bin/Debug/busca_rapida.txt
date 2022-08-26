@@ -5,7 +5,6 @@ device
 DHCP
 install
 microsoft
-read
 update
 user
 xbox

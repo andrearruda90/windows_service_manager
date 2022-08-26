@@ -34,6 +34,8 @@
             this.Serviço = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Status = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Nome = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Tipo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Parável = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.txb_Pesquisar = new System.Windows.Forms.TextBox();
             this.lvw_BuscaRapida = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -43,6 +45,7 @@
             this.lbl_SelecioneUmItem = new System.Windows.Forms.Label();
             this.ckb_Automatico = new System.Windows.Forms.CheckBox();
             this.gpb_Pesquisa = new System.Windows.Forms.GroupBox();
+            this.btn_Limpar = new System.Windows.Forms.Button();
             this.btn_Atualizar = new System.Windows.Forms.Button();
             this.ckb_Destacar = new System.Windows.Forms.CheckBox();
             this.btn_Pesquisar = new System.Windows.Forms.Button();
@@ -62,9 +65,6 @@
             this.lbl_IndicadorStatusConexao = new System.Windows.Forms.Label();
             this.btn_Conectar = new System.Windows.Forms.Button();
             this.txb_Conectar = new System.Windows.Forms.TextBox();
-            this.btn_Limpar = new System.Windows.Forms.Button();
-            this.Tipo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Parável = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.gpb_Pesquisa.SuspendLayout();
             this.gpb_Executar.SuspendLayout();
             this.gpb_BuscaRapida.SuspendLayout();
@@ -89,6 +89,7 @@
             this.lvw_Servicos.Size = new System.Drawing.Size(870, 418);
             this.lvw_Servicos.TabIndex = 0;
             this.lvw_Servicos.UseCompatibleStateImageBehavior = false;
+            this.lvw_Servicos.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lvw_Servicos_MouseDown);
             // 
             // Serviço
             // 
@@ -104,6 +105,16 @@
             // 
             this.Nome.Text = "Nome";
             this.Nome.Width = 250;
+            // 
+            // Tipo
+            // 
+            this.Tipo.Text = "Tipo";
+            this.Tipo.Width = 250;
+            // 
+            // Parável
+            // 
+            this.Parável.Text = "Parável";
+            this.Parável.Width = 130;
             // 
             // txb_Pesquisar
             // 
@@ -127,6 +138,7 @@
             this.lvw_BuscaRapida.TabIndex = 5;
             this.lvw_BuscaRapida.UseCompatibleStateImageBehavior = false;
             this.lvw_BuscaRapida.SelectedIndexChanged += new System.EventHandler(this.listView2_SelectedIndexChanged);
+            this.lvw_BuscaRapida.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lvw_BuscaRapida_MouseDown);
             // 
             // columnHeader1
             // 
@@ -216,6 +228,19 @@
             this.gpb_Pesquisa.TabStop = false;
             this.gpb_Pesquisa.Text = "Pesquisa";
             // 
+            // btn_Limpar
+            // 
+            this.btn_Limpar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btn_Limpar.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btn_Limpar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Limpar.Image")));
+            this.btn_Limpar.Location = new System.Drawing.Point(299, 52);
+            this.btn_Limpar.Name = "btn_Limpar";
+            this.btn_Limpar.Size = new System.Drawing.Size(29, 23);
+            this.btn_Limpar.TabIndex = 7;
+            this.btn_Limpar.TabStop = false;
+            this.btn_Limpar.UseVisualStyleBackColor = true;
+            this.btn_Limpar.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // btn_Atualizar
             // 
             this.btn_Atualizar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -297,7 +322,7 @@
             this.btn_Reiniciar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btn_Reiniciar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Reiniciar.Image = global::service_manager.Properties.Resources.refresh;
-            this.btn_Reiniciar.Location = new System.Drawing.Point(161, 19);
+            this.btn_Reiniciar.Location = new System.Drawing.Point(160, 19);
             this.btn_Reiniciar.Name = "btn_Reiniciar";
             this.btn_Reiniciar.Size = new System.Drawing.Size(45, 92);
             this.btn_Reiniciar.TabIndex = 10;
@@ -460,29 +485,6 @@
             this.txb_Conectar.Name = "txb_Conectar";
             this.txb_Conectar.Size = new System.Drawing.Size(108, 20);
             this.txb_Conectar.TabIndex = 12;
-            // 
-            // btn_Limpar
-            // 
-            this.btn_Limpar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btn_Limpar.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btn_Limpar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Limpar.Image")));
-            this.btn_Limpar.Location = new System.Drawing.Point(299, 52);
-            this.btn_Limpar.Name = "btn_Limpar";
-            this.btn_Limpar.Size = new System.Drawing.Size(29, 23);
-            this.btn_Limpar.TabIndex = 7;
-            this.btn_Limpar.TabStop = false;
-            this.btn_Limpar.UseVisualStyleBackColor = true;
-            this.btn_Limpar.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // Tipo
-            // 
-            this.Tipo.Text = "Tipo";
-            this.Tipo.Width = 250;
-            // 
-            // Parável
-            // 
-            this.Parável.Text = "Parável";
-            this.Parável.Width = 130;
             // 
             // frm_PainelPrincipal
             // 

@@ -10,6 +10,8 @@ using System.Net.Sockets;
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Diagnostics;
+using static System.Net.Mime.MediaTypeNames;
+using Image = System.Drawing.Image;
 
 namespace service_manager
 {
@@ -445,6 +447,7 @@ namespace service_manager
 
         private void listView2_SelectedIndexChanged(object sender, EventArgs e)
         {
+
             try
             {
                 txb_Pesquisar.Text = lvw_BuscaRapida.SelectedItems[0].Text;
@@ -581,7 +584,7 @@ namespace service_manager
 
         private void button5_Click(object sender, EventArgs e)
         {
-
+            
             if (lvw_BuscaRapida.SelectedItems.Count != 0)
             {
                 DialogResult question = MessageBox.Show($"Remover \"{lvw_BuscaRapida.SelectedItems[0].Text}\" da busca rápida?", "Confirmação", MessageBoxButtons.YesNo,
@@ -949,6 +952,106 @@ namespace service_manager
         private void button1_Click_1(object sender, EventArgs e)
         {
             txb_Pesquisar.Text = "";
+        }
+
+        private void lvw_Servicos_MouseDown(object sender, MouseEventArgs e)
+        {
+
+            if (e.Button == System.Windows.Forms.MouseButtons.Right)
+            {
+                var ContextMenu = new ContextMenuStrip();
+
+                var vToolTip001 = incluirItemMenu("Iniciar", "power");
+                var vToolTip002 = incluirItemMenu("Parar", "stop-button");
+                var vToolTip003 = incluirItemMenu("Pausar", "pause-button");
+                var vToolTip004 = incluirItemMenu("Reiniciar", "refresh");
+                var vToolTip005 = incluirItemMenu("Deletar", "delete");
+                var vToolTip006 = incluirItemMenu("Atualizar", "refresh002");
+                var vToolTip007 = incluirItemMenu("Busca Automática On/Off", "lupa");
+
+                ContextMenu.Items.Add(vToolTip001);
+                ContextMenu.Items.Add(vToolTip002);
+                ContextMenu.Items.Add(vToolTip003);
+                ContextMenu.Items.Add(vToolTip004);
+                ContextMenu.Items.Add(vToolTip005);
+                ContextMenu.Items.Add(vToolTip006);
+                ContextMenu.Items.Add(vToolTip007);
+
+                vToolTip001.Click += new System.EventHandler(vToolTip001_Click);
+                vToolTip002.Click += new System.EventHandler(vToolTip002_Click);
+                vToolTip003.Click += new System.EventHandler(vToolTip003_Click);
+                vToolTip004.Click += new System.EventHandler(vToolTip004_Click);
+                vToolTip005.Click += new System.EventHandler(vToolTip005_Click);
+                vToolTip006.Click += new System.EventHandler(vToolTip006_Click);
+                vToolTip007.Click += new System.EventHandler(vToolTip007_Click);
+
+
+                ContextMenu.Show(lvw_Servicos, new Point(e.X, e.Y ));
+            }
+        }
+        
+        void vToolTip001_Click(object sender, EventArgs e)
+        {
+            button1_Click(sender, e);
+        }
+        void vToolTip002_Click(object sender, EventArgs e)
+        {
+            button2_Click(sender, e);
+        }
+        void vToolTip003_Click(object sender, EventArgs e)
+        {
+            button6_Click(sender, e);
+        }
+        void vToolTip004_Click(object sender, EventArgs e)
+        {
+            button7_Click(sender, e);
+        }
+        void vToolTip005_Click(object sender, EventArgs e)
+        {
+            button10_Click(sender, e);
+        }
+        void vToolTip006_Click(object sender, EventArgs e)
+        {
+            button9_Click(sender, e);
+        }
+        void vToolTip007_Click(object sender, EventArgs e)
+        {
+            if (ckb_Automatico.Checked)
+            {
+                ckb_Automatico.Checked = false;
+            }
+            else
+            {
+                ckb_Automatico.Checked = true;
+            }
+        }
+
+        private void lvw_BuscaRapida_MouseDown(object sender, MouseEventArgs e)
+        {
+
+            if (e.Button == System.Windows.Forms.MouseButtons.Right)
+            {
+                var ContextMenu2 = new ContextMenuStrip();
+                var vToolTip008 = incluirItemMenu("Excluir", "delete");
+                ContextMenu2.Items.Add(vToolTip008);
+                vToolTip008.Click += new System.EventHandler(vToolTip008_Click);
+
+                ContextMenu2.Show(lvw_BuscaRapida, new Point(e.X, e.Y));
+                return;
+            }
+        }
+
+        void vToolTip008_Click(object sender, EventArgs e)
+        {
+            button5_Click(sender, e);
+        }
+        ToolStripMenuItem incluirItemMenu(string text, string nomeImagem)
+        {
+            var vToolTip = new ToolStripMenuItem();
+            vToolTip.Text = text;
+            Image  MyImage = (Image)global::service_manager.Properties.Resources.ResourceManager.GetObject(nomeImagem);
+            vToolTip.Image = MyImage;
+            return vToolTip;
         }
     }
 }
