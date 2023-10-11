@@ -4,7 +4,7 @@ Trata-se de um gerenciador de serviços do windows com algumas features exclusiv
 Crie buscas personalizadas e carregue-as de forma automática, além disso é possivel subir e parar vários serviços ao mesmo tempo, o que torna seu uso muito conveniente e prático ao mesmo tempo.
 
 
-<i>Windows service manager with some unique features,  useful for those who need to upload and stop services frequently. Create custom searches and load them automatically, also it's possible to start and stop multiple services at the same time, which makes its use more convenient and practical at the same time.</i>
+<i>Windows service manager with some unique features,  useful for those who need to run and stop services frequently. Create custom searches and load them automatically, also it's possible to start and stop multiple services at the same time, which makes its use more convenient and practical at the same time.</i>
 
 ## 🚀 Começando (Starting)
 
